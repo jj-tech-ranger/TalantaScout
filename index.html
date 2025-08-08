@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalantaScout - Football Talent Platform for Kenya</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-futbol"></i>
+                <span>TalantaScout</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="login.html" class="btn btn-primary">Get Started</a>
+                <button id="theme-toggle" class="btn btn-secondary"><i class="fas fa-moon"></i></button>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="flag-emoji">🇰🇪</span>
+                    Empowering the next generation of Kenyan football stars
+                </h1>
+                <p class="hero-subtitle">
+                    Connect players, scouts, coaches, and academies through our comprehensive football talent platform.
+                    Discover talent, develop skills, and build the future of Kenyan football.
+                </p>
+                <div class="hero-buttons">
+                    <a href="login.html" class="btn btn-primary btn-large">
+                        <i class="fas fa-rocket"></i>
+                        Start Your Journey
+                    </a>
+                    <a href="#features" class="btn btn-secondary btn-large">
+                        <i class="fas fa-play"></i>
+                        Learn More
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-graphic">
+                    <i class="fas fa-futbol hero-icon"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Role Cards Section -->
+    <section id="features" class="roles-section">
+        <div class="container">
+            <h2 class="section-title">Choose Your Role</h2>
+            <p class="section-subtitle">Join thousands of football enthusiasts across Kenya</p>
+
+            <div class="roles-grid">
+                <!-- Player Card -->
+                <div class="role-card" data-role="player">
+                    <div class="role-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3>Player</h3>
+                    <p>Track your skills, connect with scouts, and advance your football career</p>
+                    <ul class="role-features">
+                        <li><i class="fas fa-chart-line"></i> Skill Tracking</li>
+                        <li><i class="fas fa-video"></i> Video Portfolio</li>
+                        <li><i class="fas fa-trophy"></i> Achievement System</li>
+                        <li><i class="fas fa-calendar"></i> Training Schedule</li>
+                    </ul>
+                    <a href="login.html?role=player" class="btn btn-primary">Join as Player</a>
+                </div>
+
+                <!-- Scout Card -->
+                <div class="role-card" data-role="scout">
+                    <div class="role-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Scout</h3>
+                    <p>Discover talented players and build your recruitment pipeline</p>
+                    <ul class="role-features">
+                        <li><i class="fas fa-filter"></i> Advanced Search</li>
+                        <li><i class="fas fa-users"></i> Player Database</li>
+                        <li><i class="fas fa-clipboard-list"></i> Evaluation Tools</li>
+                        <li><i class="fas fa-envelope"></i> Direct Messaging</li>
+                    </ul>
+                    <a href="login.html?role=scout" class="btn btn-primary">Join as Scout</a>
+                </div>
+
+                <!-- Coach Card -->
+                <div class="role-card" data-role="coach">
+                    <div class="role-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Coach</h3>
+                    <p>Develop players with structured training programs and analytics</p>
+                    <ul class="role-features">
+                        <li><i class="fas fa-book"></i> Curriculum Builder</li>
+                        <li><i class="fas fa-chart-bar"></i> Performance Analytics</li>
+                        <li><i class="fas fa-comments"></i> Player Feedback</li>
+                        <li><i class="fas fa-graduation-cap"></i> Training Plans</li>
+                    </ul>
+                    <a href="login.html?role=coach" class="btn btn-primary">Join as Coach</a>
+                </div>
+
+                <!-- Admin Card -->
+                <div class="role-card" data-role="admin">
+                    <div class="role-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3>Admin</h3>
+                    <p>Manage the platform and oversee all user activities</p>
+                    <ul class="role-features">
+                        <li><i class="fas fa-users-cog"></i> User Management</li>
+                        <li><i class="fas fa-chart-pie"></i> Platform Analytics</li>
+                        <li><i class="fas fa-edit"></i> Content Management</li>
+                        <li><i class="fas fa-credit-card"></i> Subscription Control</li>
+                    </ul>
+                    <a href="login.html?role=admin" class="btn btn-primary">Admin Access</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">What Our Community Says</h2>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"TalantaScout has revolutionized how I discover talent across Kenya. The platform's filtering system helped me find three promising players from Kakamega who are now in our academy."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Coach Wambua</h4>
+                            <span>Gor Mahia FC Scout</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"As a young player from Eldoret, TalantaScout gave me the visibility I needed. Within two months, I received three tryout invitations and I'm now training with a professional academy in Nairobi."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Brian Otieno</h4>
+                            <span>Rising Star Player</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The curriculum builder feature has transformed how I train my players. I can now create structured weekly plans and track each player's progress in real-time."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Coach Aisha Wanjiku</h4>
+                            <span>Mathare United Academy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <h2 class="section-title">Choose Your Package</h2>
+            <p class="section-subtitle">Flexible pricing for every stage of your football journey</p>
+
+            <div class="pricing-grid">
+                <!-- Basic Package -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Basic</h3>
+                        <div class="price">
+                            <span class="currency">KSh</span>
+                            <span class="amount">0</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Skill tracker</li>
+                        <li><i class="fas fa-check"></i> Profile view</li>
+                        <li><i class="fas fa-check"></i> Basic search</li>
+                        <li><i class="fas fa-times"></i> Video uploads</li>
+                        <li><i class="fas fa-times"></i> Direct messaging</li>
+                    </ul>
+                    <a href="login.html" class="btn btn-secondary">Get Started</a>
+                </div>
+
+                <!-- Bronze Package -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Bronze</h3>
+                        <div class="price">
+                            <span class="currency">KSh</span>
+                            <span class="amount">100</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Everything in Basic</li>
+                        <li><i class="fas fa-check"></i> Visibility boost</li>
+                        <li><i class="fas fa-check"></i> 5 messages/month</li>
+                        <li><i class="fas fa-check"></i> Curriculum access</li>
+                        <li><i class="fas fa-times"></i> Video uploads</li>
+                    </ul>
+                    <a href="login.html" class="btn btn-primary">Choose Bronze</a>
+                </div>
+
+                <!-- Silver Package -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Silver</h3>
+                        <div class="price">
+                            <span class="currency">KSh</span>
+                            <span class="amount">500</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Everything in Bronze</li>
+                        <li><i class="fas fa-check"></i> Video uploads</li>
+                        <li><i class="fas fa-check"></i> Unlimited invites</li>
+                        <li><i class="fas fa-check"></i> Basic analytics</li>
+                        <li><i class="fas fa-times"></i> Premium search</li>
+                    </ul>
+                    <a href="login.html" class="btn btn-primary">Choose Silver</a>
+                </div>
+
+                <!-- Gold Package -->
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Gold</h3>
+                        <div class="price">
+                            <span class="currency">KSh</span>
+                            <span class="amount">1000</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Everything in Silver</li>
+                        <li><i class="fas fa-check"></i> Premium search results</li>
+                        <li><i class="fas fa-check"></i> Scout direct access</li>
+                        <li><i class="fas fa-check"></i> Advanced analytics</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                    </ul>
+                    <a href="login.html" class="btn btn-accent">Choose Gold</a>
+                </div>
+
+                <!-- Platinum Package -->
+                <div class="pricing-card premium">
+                    <div class="premium-badge">Premium</div>
+                    <div class="pricing-header">
+                        <h3>Platinum</h3>
+                        <div class="price">
+                            <span class="currency">KSh</span>
+                            <span class="amount">1500</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Everything in Gold</li>
+                        <li><i class="fas fa-check"></i> AI Talent Matching</li>
+                        <li><i class="fas fa-check"></i> Personal Agent</li>
+                        <li><i class="fas fa-check"></i> International Exposure</li>
+                        <li><i class="fas fa-check"></i> VIP Academy Access</li>
+                    </ul>
+                    <a href="login.html" class="btn btn-primary">Choose Platinum</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-futbol"></i>
+                        <span>TalantaScout</span>
+                    </div>
+                    <p>Empowering the next generation of Kenyan football stars through technology and community.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="login.html">Get Started</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 TalantaScout. Powered by Elyashib.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

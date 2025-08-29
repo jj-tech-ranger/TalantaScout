@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalantaScout - Scout Dashboard (Basic)</title>
+    <link rel="stylesheet" href="../../../css/scout_basic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../../../img/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="morph-overlay" id="morphOverlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p class="loading-text">Loading Scout Dashboard...</p>
+        </div>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <div class="logo-container">
+            <div class="nav-logo">
+                <i class="fas fa-futbol"></i>
+                <span>TalantaScout</span>
+            </div>
+        </div>
+
+        <div class="module-heading">
+            <h1>SCOUT DASHBOARD</h1>
+            <div class="package-badge basic">BASIC PACKAGE</div>
+        </div>
+
+        <nav class="nav-menu">
+            <ul>
+                <li class="active">
+                    <a href="dashboard.html" class="nav-item">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="player_search.html" class="nav-item">
+                        <i class="fas fa-search"></i>
+                        <span>Player Search</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="watchlist.html" class="nav-item">
+                        <i class="fas fa-bookmark"></i>
+                        <span>Watchlist</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="team_requests.html" class="nav-item">
+                        <i class="fas fa-handshake"></i>
+                        <span>Team Requests</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="messages.html" class="nav-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Messages</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html" class="nav-item">
+                        <i class="fas fa-user"></i>
+                        <span>My Profile</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="logout-section">
+                <button id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header class="dashboard-header">
+            <h2>Scout Dashboard - Basic Package</h2>
+            <div class="header-actions">
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon theme-icon"></i>
+                </button>
+                <div class="profile-container">
+                    <button class="profile-btn" id="profileBtn" aria-label="User profile" aria-expanded="false">
+                        <img src="../../../img/scout.png" alt="Profile" class="profile-img">
+                        <span>Samuel Ochieng</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Scout Overview Cards -->
+        <div class="overview-cards">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Players Scouted</h3>
+                    <div class="amount" id="playersScoutedCount">127</div>
+                    <div class="change positive">
+                        <i class="fas fa-arrow-up"></i> 15% this month
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-bookmark"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Watchlist Players</h3>
+                    <div class="amount" id="watchlistCount">23</div>
+                    <div class="change positive">
+                        <i class="fas fa-arrow-up"></i> 3 new this week
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Team Connections</h3>
+                    <div class="amount" id="teamConnections">8</div>
+                    <div class="change positive">
+                        <i class="fas fa-arrow-up"></i> 2 active requests
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Scout Rating</h3>
+                    <div class="amount" id="scoutRating">4.7</div>
+                    <div class="change positive">
+                        <i class="fas fa-arrow-up"></i> Based on 45 reviews
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Player Discoveries -->
+        <div class="recent-activity">
+            <div class="section-header">
+                <h3>Recent Player Discoveries</h3>
+                <a href="player_search.html" class="view-all">Search More Players</a>
+            </div>
+            <div class="player-discoveries" id="playerDiscoveries">
+                <!-- Player cards will be loaded by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Watchlist Summary -->
+        <div class="recent-activity">
+            <div class="section-header">
+                <h3>Watchlist Summary</h3>
+                <a href="watchlist.html" class="view-all">View Full Watchlist</a>
+            </div>
+            <div class="watchlist-summary" id="watchlistSummary">
+                <!-- Watchlist items will be loaded by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Team Requests Status -->
+        <div class="recent-activity">
+            <div class="section-header">
+                <h3>Team Requests Status</h3>
+                <a href="team_requests.html" class="view-all">View All Requests</a>
+            </div>
+            <div class="team-requests-status" id="teamRequestsStatus">
+                <!-- Team requests will be loaded by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+            <div class="footer-content">
+                <p class="footer-text">© 2025 TalantaScout. Connecting scouts with Kenya's football talent.</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Terms</a>
+                    <a href="#" class="footer-link">Privacy</a>
+                    <a href="#" class="footer-link">Support</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../../../js/scout_basic_dashboard.js"></script>
+</body>
+</html>

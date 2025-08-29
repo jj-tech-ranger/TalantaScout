@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalantaScout - Player Profile (Basic)</title>
+    <link rel="stylesheet" href="../../../css/player_basic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../../../img/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="morph-overlay" id="morphOverlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p class="loading-text">Loading Player Profile...</p>
+        </div>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <div class="logo-container">
+            <div class="nav-logo">
+                <i class="fas fa-futbol"></i>
+                <span>TalantaScout</span>
+            </div>
+        </div>
+
+        <div class="module-heading">
+            <h1>PLAYER PROFILE</h1>
+            <div class="package-badge basic">BASIC PACKAGE</div>
+        </div>
+
+        <nav class="nav-menu">
+            <ul>
+                <li>
+                    <a href="dashboard.html" class="nav-item">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="profile.html" class="nav-item">
+                        <i class="fas fa-user"></i>
+                        <span>My Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="training.html" class="nav-item">
+                        <i class="fas fa-dumbbell"></i>
+                        <span>Training Plans</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="matches.html" class="nav-item">
+                        <i class="fas fa-futbol"></i>
+                        <span>Match Performance</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="scout_connect.html" class="nav-item">
+                        <i class="fas fa-search"></i>
+                        <span>Scout Connect</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="achievements.html" class="nav-item">
+                        <i class="fas fa-trophy"></i>
+                        <span>Achievements</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="settings.html" class="nav-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="logout-section">
+                <button id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header class="dashboard-header">
+            <h2>My Profile - Basic Package</h2>
+            <div class="header-actions">
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon theme-icon"></i>
+                </button>
+                <div class="profile-container">
+                    <button class="profile-btn" id="profileBtn" aria-label="User profile" aria-expanded="false">
+                        <img src="../../../img/player.png" alt="Profile" class="profile-img">
+                        <span>Brian Otieno</span>
+                    </button>
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="fas fa-user"></i> My Profile
+                        </a>
+                        <a href="settings.html" class="dropdown-item">
+                            <i class="fas fa-cog"></i> Settings
+                        </a>
+                        <button id="logoutDropdown" class="dropdown-item logout-item">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <div class="profile-banner">
+                <img src="../../../img/hero-bg.png" alt="Profile Banner" class="banner-image">
+                <div class="profile-avatar-container">
+                    <img src="../../../img/player.png" alt="Brian Otieno" class="profile-avatar">
+                    <button class="change-photo-btn" id="changePhotoBtn">
+                        <i class="fas fa-camera"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="profile-info">
+                <h1>Brian Otieno</h1>
+                <p class="position">Midfielder • Gor Mahia FC</p>
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+                <div class="profile-stats">
+                    <div class="stat">
+                        <span class="stat-value">22</span>
+                        <span class="stat-label">Age</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">7.8</span>
+                        <span class="stat-label">Rating</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">45</span>
+                        <span class="stat-label">Matches</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">12</span>
+                        <span class="stat-label">Goals</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Content -->
+        <div class="profile-content">
+            <!-- Personal Information -->
+            <div class="profile-section">
+                <div class="section-header">
+                    <h3><i class="fas fa-user"></i> Personal Information</h3>
+                    <button class="edit-btn" id="editPersonalBtn">
+                        <i class="fas fa-edit"></i> Edit
+                    </button>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>Full Name</label>
+                        <span>Brian Otieno Ochieng</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Date of Birth</label>
+                        <span>March 15, 2002</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Nationality</label>
+                        <span>Kenyan</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Height</label>
+                        <span>175 cm</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Weight</label>
+                        <span>68 kg</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Preferred Foot</label>
+                        <span>Right</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Phone</label>
+                        <span>+254 712 345 678</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Email</label>
+                        <span>brian.otieno@email.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Football Information -->
+            <div class="profile-section">
+                <div class="section-header">
+                    <h3><i class="fas fa-futbol"></i> Football Information</h3>
+                    <button class="edit-btn" id="editFootballBtn">
+                        <i class="fas fa-edit"></i> Edit
+                    </button>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>Primary Position</label>
+                        <span>Central Midfielder</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Secondary Position</label>
+                        <span>Attacking Midfielder</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Current Team</label>
+                        <span>Gor Mahia FC</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Jersey Number</label>
+                        <span>10</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Years Playing</label>
+                        <span>8 years</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Contract Until</label>
+                        <span>December 2025</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Previous Teams</label>
+                        <span>Mathare United Youth, AFC Leopards U20</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Youth Academy</label>
+                        <span>Mathare United Academy</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Assessment -->
+            <div class="profile-section">
+                <div class="section-header">
+                    <h3><i class="fas fa-chart-bar"></i> Skills Assessment</h3>
+                    <span class="basic-badge">Basic View</span>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Passing</span>
+                            <span class="skill-rating">8.1</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 81%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Shooting</span>
+                            <span class="skill-rating">7.2</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 72%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Dribbling</span>
+                            <span class="skill-rating">6.8</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 68%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Defense</span>
+                            <span class="skill-rating">5.5</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 55%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Speed</span>
+                            <span class="skill-rating">8.5</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Physical</span>
+                            <span class="skill-rating">7.0</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Portfolio -->
+            <div class="profile-section">
+                <div class="section-header">
+                    <h3><i class="fas fa-video"></i> Video Portfolio</h3>
+                    <div class="basic-limitation">
+                        <i class="fas fa-lock"></i>
+                        <span>View Only - Upgrade to upload videos</span>
+                    </div>
+                </div>
+                <div class="video-grid" id="videoGrid">
+                    <div class="video-item">
+                        <div class="video-thumbnail">
+                            <img src="../../../img/training-bg.png" alt="Training Highlights">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="video-duration">2:30</div>
+                        </div>
+                        <div class="video-info">
+                            <h4>Training Session Highlights</h4>
+                            <p>Technical skills and ball control</p>
+                            <div class="basic-limitation">
+                                <i class="fas fa-eye"></i>
+                                <span>View Only</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-thumbnail">
+                            <img src="../../../img/match-bg.png" alt="Match Performance">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="video-duration">1:45</div>
+                        </div>
+                        <div class="video-info">
+                            <h4>Match vs AFC Leopards</h4>
+                            <p>Goal and assist highlights</p>
+                            <div class="basic-limitation">
+                                <i class="fas fa-eye"></i>
+                                <span>View Only</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+            <div class="footer-content">
+                <p class="footer-text">© 2025 TalantaScout. Empowering the next generation of Kenyan football stars.</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Terms</a>
+                    <a href="#" class="footer-link">Privacy</a>
+                    <a href="#" class="footer-link">Support</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../../../js/player_basic_profile.js"></script>
+</body>
+</html>
+

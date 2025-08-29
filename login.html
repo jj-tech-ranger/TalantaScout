@@ -3,88 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - ScoutMe</title>
-    <link rel="stylesheet" href="./css/login.css">
+    <title>TalantaScout - Login</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="login-body">
+<body class="login-page">
     <div class="login-container">
-        <!-- Back to Home -->
-        <div class="back-home">
-            <a href="index.html" class="back-link">
-                <i class="fas fa-arrow-left"></i>
-                Back to Home
-            </a>
+        <div class="login-left">
+            <div class="login-brand">
+                <div class="brand-logo">
+                    <i class="fas fa-futbol"></i>
+                    <span>TalantaScout</span>
+                </div>
+                <h1>Welcome Back!</h1>
+                <p>Connect with Kenya's football community and take your career to the next level.</p>
+            </div>
+            <div class="login-features">
+                <div class="feature-item">
+                    <i class="fas fa-users"></i>
+                    <span>Connect with scouts, coaches, and players</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Track your performance and progress</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-trophy"></i>
+                    <span>Showcase your achievements</span>
+                </div>
+            </div>
         </div>
 
-        <!-- Login Card -->
-        <div class="login-card">
-            <div class="login-header">
-                <div class="login-logo">
-                    <i class="fas fa-futbol"></i>
-                    <span>ScoutMe</span>
-                </div>
-                <h2>Welcome Back</h2>
-                <p>Choose your role to continue</p>
-            </div>
+        <div class="login-right">
+            <div class="login-form-container">
+                <h2>Sign In</h2>
+                <p class="login-subtitle">Choose your role and enter your credentials</p>
 
-            <!-- Role Selection -->
-            <div class="role-selection" id="roleSelection">
-                <h3>Select Your Role</h3>
-                <div class="role-options">
-                    <div class="role-option" data-role="player">
-                        <div class="role-icon">
-                            <i class="fas fa-running"></i>
-                        </div>
-                        <span>Player</span>
-                    </div>
-                    <div class="role-option" data-role="scout">
-                        <div class="role-icon">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <span>Scout</span>
-                    </div>
-                    <div class="role-option" data-role="coach">
-                        <div class="role-icon">
-                            <i class="fas fa-whistle"></i>
-                        </div>
-                        <span>Coach</span>
-                    </div>
-                    <div class="role-option" data-role="admin">
-                        <div class="role-icon">
-                            <i class="fas fa-cog"></i>
-                        </div>
-                        <span>Admin</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Login Form -->
-            <div class="login-form-container" id="loginForm" style="display: none;">
-                <form class="login-form" id="authForm">
-                    <div class="selected-role" id="selectedRole">
-                        <i class="fas fa-user"></i>
-                        <span id="selectedRoleText">Player</span>
-                        <button type="button" class="change-role" id="changeRole">
-                            <i class="fas fa-edit"></i>
-                        </button>
+                <form id="loginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="userRole">Select Your Role</label>
+                        <select id="userRole" name="role" required>
+                            <option value="">Choose your role...</option>
+                            <option value="player">Player</option>
+                            <option value="scout">Scout</option>
+                            <option value="coach">Coach</option>
+                            <option value="admin">Admin</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <div class="input-group">
-                            <i class="fas fa-envelope"></i>
-                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                        </div>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email">
                     </div>
 
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <div class="input-group">
-                            <i class="fas fa-lock"></i>
-                            <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                            <button type="button" class="toggle-password" id="togglePassword">
+                        <div class="password-input">
+                            <input type="password" id="password" name="password" required placeholder="Enter your password">
+                            <button type="button" class="password-toggle" id="passwordToggle">
                                 <i class="fas fa-eye"></i>
                             </button>
                         </div>
@@ -92,7 +70,7 @@
 
                     <div class="form-options">
                         <label class="checkbox-container">
-                            <input type="checkbox" id="rememberMe">
+                            <input type="checkbox" id="rememberMe" name="remember">
                             <span class="checkmark"></span>
                             Remember me
                         </label>
@@ -103,123 +81,79 @@
                         <i class="fas fa-sign-in-alt"></i>
                         Sign In
                     </button>
-
-                    <div class="divider">
-                        <span>or</span>
-                    </div>
-
-                    <button type="button" class="btn btn-secondary btn-full" id="demoLogin">
-                        <i class="fas fa-play"></i>
-                        Try Demo Account
-                    </button>
-
-                    <div class="signup-link">
-                        <p>Don't have an account? <a href="#" id="signupLink">Sign up here</a></p>
-                    </div>
                 </form>
-            </div>
 
-            <!-- Signup Form -->
-            <div class="signup-form-container" id="signupForm" style="display: none;">
-                <form class="signup-form" id="registerForm">
-                    <h3>Create Your Account</h3>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" name="firstName" placeholder="First name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
-                        </div>
+                <div class="demo-accounts">
+                    <h3>Demo Accounts</h3>
+                    <p>Try TalantaScout with these demo credentials:</p>
+                    <div class="demo-grid">
+                        <button class="demo-btn" data-role="player" data-email="player@demo.com" data-password="demo123">
+                            <i class="fas fa-running"></i>
+                            <span>Player Demo</span>
+                        </button>
+                        <button class="demo-btn" data-role="scout" data-email="scout@demo.com" data-password="demo123">
+                            <i class="fas fa-search"></i>
+                            <span>Scout Demo</span>
+                        </button>
+                        <button class="demo-btn" data-role="coach" data-email="coach@demo.com" data-password="demo123">
+                            <i class="fas fa-dumbbell"></i>
+                            <span>Coach Demo</span>
+                        </button>
+                        <button class="demo-btn" data-role="admin" data-email="admin@demo.com" data-password="demo123">
+                            <i class="fas fa-cog"></i>
+                            <span>Admin Demo</span>
+                        </button>
                     </div>
-
-                    <div class="form-group">
-                        <label for="signupEmail">Email Address</label>
-                        <input type="email" id="signupEmail" name="email" placeholder="Enter your email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="county">County</label>
-                        <select id="county" name="county" required>
-                            <option value="">Select your county</option>
-                            <option value="nairobi">Nairobi</option>
-                            <option value="kisumu">Kisumu</option>
-                            <option value="eldoret">Eldoret</option>
-                            <option value="nakuru">Nakuru</option>
-                            <option value="mombasa">Mombasa</option>
-                            <option value="kakamega">Kakamega</option>
-                            <option value="thika">Thika</option>
-                            <option value="kitale">Kitale</option>
-                            <option value="machakos">Machakos</option>
-                            <option value="nyeri">Nyeri</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="signupPassword">Password</label>
-                        <input type="password" id="signupPassword" name="password" placeholder="Create a password" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="confirmPassword">Confirm Password</label>
-                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="checkbox-container">
-                            <input type="checkbox" id="agreeTerms" required>
-                            <span class="checkmark"></span>
-                            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
-                        </label>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary btn-full">
-                        <i class="fas fa-user-plus"></i>
-                        Create Account
-                    </button>
-
-                    <div class="signin-link">
-                        <p>Already have an account? <a href="#" id="signinLink">Sign in here</a></p>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <!-- Features Preview -->
-        <div class="features-preview">
-            <h3>What you'll get:</h3>
-            <div class="feature-list">
-                <div class="feature-item">
-                    <i class="fas fa-chart-line"></i>
-                    <span>Track your progress</span>
                 </div>
-                <div class="feature-item">
-                    <i class="fas fa-users"></i>
-                    <span>Connect with professionals</span>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-trophy"></i>
-                    <span>Showcase your achievements</span>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-calendar"></i>
-                    <span>Manage your schedule</span>
+
+                <div class="signup-link">
+                    <p>Don't have an account? <a href="#" id="signupLink">Sign up here</a></p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Loading Overlay -->
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="loading-spinner">
-            <i class="fas fa-futbol fa-spin"></i>
-            <p>Signing you in...</p>
+    <!-- Package Selection Modal -->
+    <div class="modal-overlay" id="packageModal">
+        <div class="modal package-modal">
+            <div class="modal-header">
+                <h3>Choose Your Package</h3>
+                <button class="close-modal" id="closePackageModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Select a subscription package to continue:</p>
+                <div class="package-grid">
+                    <div class="package-card" data-package="basic">
+                        <h4>Basic</h4>
+                        <div class="package-price">KSh 0/month</div>
+                        <p>Free tier with basic features</p>
+                    </div>
+                    <div class="package-card" data-package="bronze">
+                        <h4>Bronze</h4>
+                        <div class="package-price">KSh 100/month</div>
+                        <p>Enhanced visibility and messaging</p>
+                    </div>
+                    <div class="package-card" data-package="silver">
+                        <h4>Silver</h4>
+                        <div class="package-price">KSh 500/month</div>
+                        <p>Video uploads and analytics</p>
+                    </div>
+                    <div class="package-card" data-package="gold">
+                        <h4>Gold</h4>
+                        <div class="package-price">KSh 1000/month</div>
+                        <p>Premium features and priority support</p>
+                    </div>
+                    <div class="package-card" data-package="platinum">
+                        <h4>Platinum</h4>
+                        <div class="package-price">KSh 1500/month</div>
+                        <p>VIP access and personal agent</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script src="./js/login.js"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>
 

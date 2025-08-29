@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalantaScout - Training Plans (Bronze)</title>
+    <link rel="stylesheet" href="../../../css/player_bronze.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../../../img/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div class="morph-overlay" id="morphOverlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p class="loading-text">Loading Training Plans...</p>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="logo-container">
+            <div class="nav-logo">
+                <i class="fas fa-futbol"></i>
+                <span>TalantaScout</span>
+            </div>
+        </div>
+
+        <div class="module-heading">
+            <h1>TRAINING PLANS</h1>
+            <div class="package-badge bronze">BRONZE PACKAGE</div>
+        </div>
+
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="dashboard.html" class="nav-item"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+                <li><a href="profile.html" class="nav-item"><i class="fas fa-user"></i><span>My Profile</span></a></li>
+                <li class="active"><a href="training.html" class="nav-item"><i class="fas fa-dumbbell"></i><span>Training Plans</span></a></li>
+                <li><a href="matches.html" class="nav-item"><i class="fas fa-futbol"></i><span>Match Performance</span></a></li>
+                <li><a href="scout_connect.html" class="nav-item"><i class="fas fa-search"></i><span>Scout Connect</span></a></li>
+                <li><a href="achievements.html" class="nav-item"><i class="fas fa-trophy"></i><span>Achievements</span></a></li>
+                <li><a href="settings.html" class="nav-item"><i class="fas fa-cog"></i><span>Settings</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header class="dashboard-header">
+            <h2>Training Plans - Bronze Package</h2>
+            <div class="header-actions">
+                <button id="themeToggle" class="theme-toggle"><i class="fas fa-moon theme-icon"></i></button>
+                <div class="profile-container">
+                    <button class="profile-btn" id="profileBtn">
+                        <img src="../../../img/player.png" alt="Profile" class="profile-img">
+                        <span>Brian Otieno</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="training-overview">
+            <div class="training-stats">
+                <div class="stat-card">
+                    <i class="fas fa-calendar-week"></i>
+                    <div class="stat-info">
+                        <h3>This Week</h3>
+                        <span class="stat-value">6 Sessions</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <div class="stat-info">
+                        <h3>Total Hours</h3>
+                        <span class="stat-value">12.5 hrs</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-chart-line"></i>
+                    <div class="stat-info">
+                        <h3>Progress</h3>
+                        <span class="stat-value">78%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="training-schedule">
+            <div class="section-header">
+                <h3>Weekly Training Schedule</h3>
+            </div>
+            <div class="schedule-grid" id="trainingSchedule">
+                <!-- Training schedule will be loaded by JavaScript -->
+            </div>
+        </div>
+
+        <footer class="dashboard-footer">
+            <div class="footer-content">
+                <p class="footer-text">© 2025 TalantaScout. Empowering the next generation of Kenyan football stars.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../../../js/player_bronze_training.js"></script>
+</body>
+</html>

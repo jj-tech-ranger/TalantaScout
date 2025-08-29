@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalantaScout - Coach Dashboard (Basic)</title>
+    <link rel="stylesheet" href="../../../css/coach_basic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../../../img/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="morph-overlay" id="morphOverlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p class="loading-text">Loading Coach Dashboard...</p>
+        </div>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <div class="logo-container">
+            <div class="nav-logo">
+                <i class="fas fa-futbol"></i>
+                <span>TalantaScout</span>
+            </div>
+        </div>
+
+        <div class="module-heading">
+            <h1>COACH DASHBOARD</h1>
+            <div class="package-badge basic">BASIC PACKAGE</div>
+        </div>
+
+        <nav class="nav-menu">
+            <ul>
+                <li class="active">
+                    <a href="dashboard.html" class="nav-item">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="team_management.html" class="nav-item">
+                        <i class="fas fa-users"></i>
+                        <span>Team Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="training_plans.html" class="nav-item">
+                        <i class="fas fa-clipboard-list"></i>
+                        <span>Training Plans</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="match_analysis.html" class="nav-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Match Analysis</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="recruitment_pipeline.html" class="nav-item">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Recruitment</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="messages.html" class="nav-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Messages</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html" class="nav-item">
+                        <i class="fas fa-user"></i>
+                        <span>My Profile</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="logout-section">
+                <button id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header class="dashboard-header">
+            <h2>Coach Dashboard - Basic Package</h2>
+            <div class="header-actions">
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon theme-icon"></i>
+                </button>
+                <div class="profile-container">
+                    <button class="profile-btn" id="profileBtn" aria-label="User profile" aria-expanded="false">
+                        <img src="../../../img/coach.png" alt="Profile" class="profile-img">
+                        <span>Coach Wambua</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Coach Overview Cards -->
+        <div class="overview-cards">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Squad Size</h3>
+                    <div class="amount" id="squadSize">28</div>
+                    <div class="change positive">
+                        <i class="fas fa-arrow-up"></i> 3 new signings
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Matches Won</h3>
+                    <div class="amount" id="matchesWon">18</div>
+                    <div class="change positive">
+                        <i class="fas fa-arrow-up"></i> 75% win rate
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-running"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Training Sessions</h3>
+                    <div class="amount" id="trainingSessions">156</div>
+                    <div class="change positive">
+                        <i class="fas fa-arrow-up"></i> 6 this week
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Team Rating</h3>
+                    <div class="amount" id="teamRating">8.2</div>
+                    <div class="change positive">
+                        <i class="fas fa-arrow-up"></i> League average: 7.1
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upcoming Matches -->
+        <div class="recent-activity">
+            <div class="section-header">
+                <h3>Upcoming Matches</h3>
+                <a href="match_analysis.html" class="view-all">View Match Calendar</a>
+            </div>
+            <div class="upcoming-matches" id="upcomingMatches">
+                <!-- Match cards will be loaded by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Team Performance Summary -->
+        <div class="recent-activity">
+            <div class="section-header">
+                <h3>Team Performance Summary</h3>
+                <a href="team_management.html" class="view-all">View Full Squad</a>
+            </div>
+            <div class="team-performance" id="teamPerformance">
+                <!-- Performance data will be loaded by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Training Schedule -->
+        <div class="recent-activity">
+            <div class="section-header">
+                <h3>This Week's Training Schedule</h3>
+                <a href="training_plans.html" class="view-all">View All Training Plans</a>
+            </div>
+            <div class="training-schedule" id="trainingSchedule">
+                <!-- Training schedule will be loaded by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+            <div class="footer-content">
+                <p class="footer-text">© 2025 TalantaScout. Empowering coaches to build winning teams.</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Terms</a>
+                    <a href="#" class="footer-link">Privacy</a>
+                    <a href="#" class="footer-link">Support</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../../../js/coach_basic_dashboard.js"></script>
+</body>
+</html>

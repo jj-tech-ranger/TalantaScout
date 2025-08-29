@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalantaScout - Team Management (Basic)</title>
+    <link rel="stylesheet" href="../../../css/coach_basic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../../../img/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div class="morph-overlay" id="morphOverlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p class="loading-text">Loading Team Management...</p>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="logo-container">
+            <div class="nav-logo">
+                <i class="fas fa-futbol"></i>
+                <span>TalantaScout</span>
+            </div>
+        </div>
+
+        <div class="module-heading">
+            <h1>TEAM MANAGEMENT</h1>
+            <div class="package-badge basic">BASIC PACKAGE</div>
+        </div>
+
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="dashboard.html" class="nav-item"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+                <li class="active"><a href="team_management.html" class="nav-item"><i class="fas fa-users"></i><span>Team Management</span></a></li>
+                <li><a href="training_plans.html" class="nav-item"><i class="fas fa-clipboard-list"></i><span>Training Plans</span></a></li>
+                <li><a href="match_analysis.html" class="nav-item"><i class="fas fa-chart-line"></i><span>Match Analysis</span></a></li>
+                <li><a href="recruitment_pipeline.html" class="nav-item"><i class="fas fa-user-plus"></i><span>Recruitment</span></a></li>
+                <li><a href="messages.html" class="nav-item"><i class="fas fa-envelope"></i><span>Messages</span></a></li>
+                <li><a href="profile.html" class="nav-item"><i class="fas fa-user"></i><span>My Profile</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header class="dashboard-header">
+            <h2>Team Management - Basic Package</h2>
+            <div class="header-actions">
+                <button id="themeToggle" class="theme-toggle"><i class="fas fa-moon theme-icon"></i></button>
+                <div class="profile-container">
+                    <button class="profile-btn" id="profileBtn">
+                        <img src="../../../img/coach.png" alt="Profile" class="profile-img">
+                        <span>Coach Wambua</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="team-overview">
+            <div class="team-stats">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-info">
+                        <h3>Squad Size</h3>
+                        <span class="stat-value">28 Players</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-star"></i>
+                    <div class="stat-info">
+                        <h3>Average Rating</h3>
+                        <span class="stat-value">7.8</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <div class="stat-info">
+                        <h3>Fitness Level</h3>
+                        <span class="stat-value">85%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="squad-roster">
+            <div class="section-header">
+                <h3>Squad Roster</h3>
+                <button class="btn btn-primary" id="addPlayerBtn">
+                    <i class="fas fa-plus"></i> Add Player
+                </button>
+            </div>
+            <div class="roster-grid" id="squadRoster">
+                <!-- Squad roster will be loaded by JavaScript -->
+            </div>
+        </div>
+
+        <div class="formation-setup">
+            <div class="section-header">
+                <h3>Formation Setup</h3>
+            </div>
+            <div class="formation-field" id="formationField">
+                <!-- Formation will be loaded by JavaScript -->
+            </div>
+        </div>
+
+        <footer class="dashboard-footer">
+            <div class="footer-content">
+                <p class="footer-text">© 2025 TalantaScout. Empowering coaches to build winning teams.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../../../js/coach_basic_team_management.js"></script>
+</body>
+</html>

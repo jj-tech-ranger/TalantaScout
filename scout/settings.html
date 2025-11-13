@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalantaScout - Settings (Gold)</title>
+    <link rel="stylesheet" href="/assets/css/scout_gold.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div class="morph-overlay" id="morphOverlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p class="loading-text">Loading Settings...</p>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="logo-container">
+            <div class="nav-logo">
+                <i class="fas fa-futbol"></i>
+                <span>TalantaScout</span>
+            </div>
+        </div>
+
+        <div class="module-heading">
+            <h1>SCOUT SETTINGS</h1>
+            <div class="package-badge gold">GOLD PACKAGE - KSh 1,000/month</div>
+        </div>
+
+        <nav class="nav-menu">
+            <ul>
+                <li >
+                    <a href="dashboard.html" class="nav-item">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                        
+                    </a>
+                </li>
+                <li >
+                    <a href="player_search.html" class="nav-item">
+                        <i class="fas fa-search"></i>
+                        <span>Player Search</span>
+                        <span class="feature-badge">AI POWERED</span>
+                    </a>
+                </li>
+                <li >
+                    <a href="watchlist.html" class="nav-item">
+                        <i class="fas fa-bookmark"></i>
+                        <span>Watchlist</span>
+                        <span class="feature-badge">SMART LISTS</span>
+                    </a>
+                </li>
+                <li >
+                    <a href="team_requests.html" class="nav-item">
+                        <i class="fas fa-handshake"></i>
+                        <span>Team Requests</span>
+                        <span class="feature-badge">PRIORITY</span>
+                    </a>
+                </li>
+                <li >
+                    <a href="messages.html" class="nav-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Messages</span>
+                        <span class="feature-badge">PRIORITY</span>
+                    </a>
+                </li>
+                <li >
+                    <a href="profile.html" class="nav-item">
+                        <i class="fas fa-user"></i>
+                        <span>My Profile</span>
+                        <span class="feature-badge">PREMIUM</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="settings.html" class="nav-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                        <span class="feature-badge">PREMIUM</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="logout-section">
+                <button id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header class="dashboard-header">
+            <h2>Scout Settings - Gold Package (KSh 1,000/month)</h2>
+            <div class="header-actions">
+                <button id="themeToggle" class="theme-toggle">
+                    <i class="fas fa-moon theme-icon"></i>
+                </button>
+                <div class="profile-container">
+                    <button class="profile-btn" id="profileBtn">
+                        <img src="/assets/images/scout.png" alt="Profile" class="profile-img">
+                        <span>Samuel Ochieng</span>
+                        <div class="package-indicator gold">GOLD</div>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        
+        <div class="settings-content gold-tier">
+            <h3>Scout Settings - Gold Package</h3>
+            <p>This is the scout settings page for gold package users.</p>
+        </div>
+
+        <footer class="dashboard-footer">
+            <div class="footer-content">
+                <p class="footer-text">© 2025 TalantaScout. Connecting scouts with Kenya's football talent.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/assets/js/scout_gold_settings.js"></script>
+</body>
+</html>

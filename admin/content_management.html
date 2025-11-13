@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalantaScout - Player Dashboard (Basic)</title>
+    <link rel="stylesheet" href="/assets/css/player_basic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="morph-overlay" id="morphOverlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p class="loading-text">Loading Player Dashboard...</p>
+        </div>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <div class="logo-container">
+            <div class="nav-logo">
+                <i class="fas fa-futbol"></i>
+                <span>TalantaScout</span>
+            </div>
+        </div>
+
+        <div class="module-heading">
+            <h1>PLAYER DASHBOARD</h1>
+            <div class="package-badge basic">BASIC PACKAGE</div>
+        </div>
+
+        <nav class="nav-menu">
+            <ul>
+                <li class="active">
+                    <a href="dashboard.html" class="nav-item">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html" class="nav-item">
+                        <i class="fas fa-user"></i>
+                        <span>My Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="training.html" class="nav-item">
+                        <i class="fas fa-dumbbell"></i>
+                        <span>Training Plans</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="matches.html" class="nav-item">
+                        <i class="fas fa-futbol"></i>
+                        <span>Match Performance</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="scout_connect.html" class="nav-item">
+                        <i class="fas fa-search"></i>
+                        <span>Scout Connect</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="achievements.html" class="nav-item">
+                        <i class="fas fa-trophy"></i>
+                        <span>Achievements</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="settings.html" class="nav-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="logout-section">
+                <button id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header class="dashboard-header">
+            <h2>Player Dashboard - Basic Package</h2>
+            <div class="header-actions">
+                <div class="date-filter">
+                    <i class="fas fa-calendar-alt"></i>
+                    <input type="date" id="dashboardDate" value="2025-01-08">
+                </div>
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon theme-icon"></i>
+                </button>
+                <div class="profile-container">
+                    <button class="profile-btn" id="profileBtn" aria-label="User profile" aria-expanded="false">
+                        <img src="/assets/images/player.png" alt="Profile" class="profile-img">
+                        <span>Brian Otieno</span>
+                    </button>
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="fas fa-user"></i> My Profile
+                        </a>
+                        <a href="settings.html" class="dropdown-item">
+                            <i class="fas fa-cog"></i> Settings
+                        </a>
+                        <button id="logoutDropdown" class="dropdown-item logout-item">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Package Upgrade Notice -->
+        <div class="upgrade-notice">
+            <div class="upgrade-content">
+                <i class="fas fa-star"></i>
+                <div>
+                    <h3>Upgrade to unlock more features!</h3>
+                    <p>Get video uploads, direct messaging, and advanced analytics with our premium packages.</p>
+                </div>
+                <a href="../bronze/dashboard.html" class="btn btn-primary">Upgrade Now</a>
+            </div>
+        </div>
+
+        <!-- Overview Cards -->
+        <div class="overview-cards">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-futbol"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Total Matches Played</h3>
+                    <div class="amount" id="totalMatches">45</div>
+                    <div class="change positive">
+                        <i class="fas fa-arrow-up"></i> 8% from last season
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Goals Scored</h3>
+                    <div class="amount" id="goalsScored">12</div>
+                    <div class="change positive">
+                        <i class="fas fa-arrow-up"></i> 5% this month
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Assists</h3>
+                    <div class="amount" id="assists">8</div>
+                    <div class="change positive">
+                        <i class="fas fa-arrow-up"></i> 3% this month
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-running"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Training Sessions</h3>
+                    <div class="amount" id="trainingSessions">24</div>
+                    <div class="change positive">
+                        <i class="fas fa-arrow-up"></i> 12% this week
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skill Progression Table -->
+        <div class="recent-activity">
+            <div class="section-header">
+                <h3>Skill Progression</h3>
+                <span class="basic-badge">Basic View</span>
+            </div>
+            <table id="skillTable">
+                <thead>
+                    <tr>
+                        <th>Skill Category</th>
+                        <th>Current Level</th>
+                        <th>Rating</th>
+                        <th>Last Updated</th>
+                        <th>Progress</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Skills will be loaded by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Match Rating Distribution -->
+        <div class="recent-activity">
+            <div class="section-header">
+                <h3>Recent Match Ratings</h3>
+                <a href="matches.html" class="view-all">View All Matches</a>
+            </div>
+            <div class="rating-list" id="ratingList">
+                <!-- Match ratings will be loaded by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Upcoming Training Sessions -->
+        <div class="recent-activity">
+            <div class="section-header">
+                <h3>Upcoming Training Sessions</h3>
+                <a href="training.html" class="view-all">View All Training</a>
+            </div>
+            <table id="trainingTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Training Type</th>
+                        <th>Coach</th>
+                        <th>Location</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Training sessions will be loaded by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Recent Match Highlights -->
+        <div class="match-highlights">
+            <div class="section-header">
+                <h3>Recent Match Highlights</h3>
+                <a href="matches.html" class="view-all">View All Matches</a>
+            </div>
+            <div class="match-cards" id="matchCards">
+                <!-- Match cards will be loaded by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Limited Video Portfolio -->
+        <div class="video-portfolio-section">
+            <div class="section-header">
+                <h3>Video Portfolio</h3>
+                <div class="basic-limitation">
+                    <i class="fas fa-lock"></i>
+                    <span>View Only - Upgrade to upload videos</span>
+                </div>
+            </div>
+            <div class="video-grid" id="videoGrid">
+                <!-- Video items will be loaded by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Limited Scout Interactions -->
+        <div class="scout-interactions-section">
+            <div class="section-header">
+                <h3>Scout Interactions</h3>
+                <div class="basic-limitation">
+                    <i class="fas fa-eye"></i>
+                    <span>View Only - Upgrade for messaging</span>
+                </div>
+            </div>
+            <div class="scout-interactions" id="scoutInteractions">
+                <!-- Scout interactions will be loaded by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+            <div class="footer-content">
+                <p class="footer-text">© 2025 TalantaScout. Empowering the next generation of Kenyan football stars.</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Terms</a>
+                    <a href="#" class="footer-link">Privacy</a>
+                    <a href="#" class="footer-link">Support</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Match Details Modal -->
+    <div class="modal-overlay" id="matchModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="matchModalTitle">Match Details</h3>
+                <button class="close-modal" id="closeMatchModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="match-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Date:</span>
+                        <span class="detail-value" id="modalMatchDate">Loading...</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Opponent:</span>
+                        <span class="detail-value" id="modalOpponent">Loading...</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Score:</span>
+                        <span class="detail-value" id="modalScore">Loading...</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Your Goals:</span>
+                        <span class="detail-value" id="modalGoals">Loading...</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Your Assists:</span>
+                        <span class="detail-value" id="modalAssists">Loading...</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Rating:</span>
+                        <span class="detail-value" id="modalRating">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upgrade Modal -->
+    <div class="modal-overlay" id="upgradeModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Upgrade Your Package</h3>
+                <button class="close-modal" id="closeUpgradeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Unlock more features with our premium packages:</p>
+                <div class="upgrade-options">
+                    <div class="upgrade-option">
+                        <h4>Bronze Package</h4>
+                        <div class="price">KSh 100/month</div>
+                        <ul>
+                            <li>Visibility boost</li>
+                            <li>5 messages/month</li>
+                            <li>Curriculum access</li>
+                        </ul>
+                        <a href="../bronze/dashboard.html" class="btn btn-primary">Choose Bronze</a>
+                    </div>
+                    <div class="upgrade-option">
+                        <h4>Silver Package</h4>
+                        <div class="price">KSh 500/month</div>
+                        <ul>
+                            <li>Video uploads</li>
+                            <li>Unlimited messaging</li>
+                            <li>Basic analytics</li>
+                        </ul>
+                        <a href="../silver/dashboard.html" class="btn btn-primary">Choose Silver</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/player_basic_dashboard.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalantaScout - Admin Dashboard</title>
+    <link rel="stylesheet" href="../../css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../../img/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="morph-overlay" id="morphOverlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p class="loading-text">Loading Admin Dashboard...</p>
+        </div>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <div class="logo-container">
+            <div class="nav-logo">
+                <i class="fas fa-futbol"></i>
+                <span>TalantaScout</span>
+            </div>
+        </div>
+
+        <div class="module-heading">
+            <h1>ADMIN DASHBOARD</h1>
+            <div class="package-badge admin">ADMIN PANEL</div>
+        </div>
+
+        <nav class="nav-menu">
+            <ul>
+                <li class="active">
+                    <a href="dashboard.html" class="nav-item">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="user_management.html" class="nav-item">
+                        <i class="fas fa-users"></i>
+                        <span>User Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="platform_analytics.html" class="nav-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Platform Analytics</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="subscription_control.html" class="nav-item">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Subscriptions</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="content_management.html" class="nav-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Content Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="system_settings.html" class="nav-item">
+                        <i class="fas fa-cog"></i>
+                        <span>System Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="support_moderation.html" class="nav-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Support & Moderation</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="audit_logs.html" class="nav-item">
+                        <i class="fas fa-clipboard-list"></i>
+                        <span>Audit Logs</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="logout-section">
+                <button id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header class="dashboard-header">
+            <h2>Admin Dashboard - Platform Overview</h2>
+            <div class="header-actions">
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon theme-icon"></i>
+                </button>
+                <div class="profile-container">
+                    <button class="profile-btn" id="profileBtn" aria-label="User profile" aria-expanded="false">
+                        <img src="../../img/admin.png" alt="Profile" class="profile-img">
+                        <span>Admin User</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Platform Overview Cards -->
+        <div class="overview-cards">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Total Users</h3>
+                    <div class="amount" id="totalUsers">12,847</div>
+                    <div class="change positive">
+                        <i class="fas fa-arrow-up"></i> 8.5% this month
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Active Subscriptions</h3>
+                    <div class="amount" id="activeSubscriptions">3,421</div>
+                    <div class="change positive">
+                        <i class="fas fa-arrow-up"></i> 12.3% this month
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Monthly Revenue</h3>
+                    <div class="amount" id="monthlyRevenue">KSh 1,245,680</div>
+                    <div class="change positive">
+                        <i class="fas fa-arrow-up"></i> 15.7% this month
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Support Tickets</h3>
+                    <div class="amount" id="supportTickets">23</div>
+                    <div class="change negative">
+                        <i class="fas fa-arrow-down"></i> 5 pending
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- User Distribution -->
+        <div class="recent-activity">
+            <div class="section-header">
+                <h3>User Distribution by Role</h3>
+                <a href="user_management.html" class="view-all">Manage Users</a>
+            </div>
+            <div class="user-distribution" id="userDistribution">
+                <div class="distribution-item">
+                    <div class="role-info">
+                        <i class="fas fa-running"></i>
+                        <span class="role-name">Players</span>
+                    </div>
+                    <div class="role-stats">
+                        <span class="count">8,234</span>
+                        <div class="percentage-bar">
+                            <div class="fill" style="width: 64%"></div>
+                        </div>
+                        <span class="percentage">64%</span>
+                    </div>
+                </div>
+                <div class="distribution-item">
+                    <div class="role-info">
+                        <i class="fas fa-search"></i>
+                        <span class="role-name">Scouts</span>
+                    </div>
+                    <div class="role-stats">
+                        <span class="count">2,156</span>
+                        <div class="percentage-bar">
+                            <div class="fill" style="width: 17%"></div>
+                        </div>
+                        <span class="percentage">17%</span>
+                    </div>
+                </div>
+                <div class="distribution-item">
+                    <div class="role-info">
+                        <i class="fas fa-clipboard"></i>
+                        <span class="role-name">Coaches</span>
+                    </div>
+                    <div class="role-stats">
+                        <span class="count">2,457</span>
+                        <div class="percentage-bar">
+                            <div class="fill" style="width: 19%"></div>
+                        </div>
+                        <span class="percentage">19%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+            <div class="footer-content">
+                <p class="footer-text">© 2025 TalantaScout Admin Panel. Managing Kenya's football talent platform.</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">System Status</a>
+                    <a href="#" class="footer-link">Documentation</a>
+                    <a href="#" class="footer-link">Support</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../../js/admin_dashboard.js"></script>
+</body>
+</html>
+
